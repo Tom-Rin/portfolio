@@ -43,6 +43,11 @@ const ProjectService = {
                     const contentEl = content.querySelector('.project-layer-content');
                     if (contentEl) {
                         contentEl.innerHTML = contentData;
+                        
+                        // Re-render MathJax for the newly injected content
+                        if (window.MathJax && typeof MathJax.typeset === 'function') {
+                            MathJax.typeset();
+                        }
                     }
                     
                     // Initial state: first layer always open, others can be toggled
