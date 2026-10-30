@@ -1,6 +1,6 @@
 {
     "id": "thesis_Data_science",
-    "title": "Optimalisatie van Active Inference voor Roboten (Data Science Focus)",
+    "title": "Optimalisatie van Active Inference voor Roboten",
     "category": "Data Science",
     "summary": "Het omzetten van een traag, onvoorspelbaar zoekproces naar een directe, wiskundig gegarandeerde berekening (one-step convergence). Dit maakt de robot in staat om direct en betrouwbaar te navigeren met lage latentie.",
     "contentPaths": {
