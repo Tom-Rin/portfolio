@@ -45,7 +45,9 @@ const ProjectService = {
                         contentEl.innerHTML = contentData;
                         
                         // Re-render MathJax for the newly injected content
-                        if (window.MathJax && typeof MathJax.typeset === 'function') {
+                        if (window.MathJax && typeof MathJax.typesetPromise === 'function') {
+                            await MathJax.typesetPromise();
+                        } else if (window.MathJax && typeof MathJax.typeset === 'function') {
                             MathJax.typeset();
                         }
                     }

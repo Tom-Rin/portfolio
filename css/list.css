@@ -1,0 +1,41 @@
+/* Universele styling voor Kernvaardigheden */
+.skills-container {
+    margin: 20px 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Standaard één kolom voor leesbaarheid */
+    gap: 16px;
+    margin-top: 15px;
+}
+
+.skill-block {
+    padding: 16px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #007bff; /* Je accentkleur */
+    border-radius: 4px;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    transition: transform 0.2s ease;
+}
+
+.skill-block:hover {
+    transform: translateX(4px);
+    background-color: #f0f2f5;
+}
+
+.skill-title {
+    display: block;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+}
+
+.skill-description {
+    margin: 0;
+    line-height: 1.6;
+    color: #444;
+}

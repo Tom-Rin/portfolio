@@ -33,22 +33,23 @@
 <p><strong>De Oplossing: Van Iteratie naar Directe Berekening</strong></p>
 <p>
   In plaats van te wachten tot de agent via een lus het juiste punt vindt, kan
-  het probleem worden geformuleerd als een vaste-puntvergelijking. de
-  vaste-punt $z$ wordt berekend door: $$ \begin{align}z &=
+  het probleem worden geformuleerd als een vaste-puntvergelijking. de vaste-punt
+  $z$ wordt berekend door: $$ \begin{align}z &=
   (\frac{1}{\sigma^2}+\frac{1}{\sigma^2_{\infty}(z)})^{-1}(\frac{s}{\sigma^2} +
   \frac{m_\infty(z)}{\sigma^2_\infty (z)})\ \\& =
   (\frac{1}{\sigma^2}+\frac{\gamma}{|a - z|})^{-1}(\frac{s}{\sigma^2} +
   \frac{\gamma (|a-z| +a)}{|a-z|}).\end{align}$$ Door deze formule analytisch op
   te lossen, is de "eindbestemming" direct beschikbaar. Veel termen vallen weg,
-  waardoor de oplossing elegant wordt. 
+  waardoor de oplossing elegant wordt.
   <details>
     <summary>Klik voor het antwoord:</summary>
-    <div style="margin-top: 10px;">
-      $$\begin{align} & \text{Voor } z \geq a: z = a \lor z = \mu \\& \text{Voor } z
-      \leq a: z = a \lor z = 2\gamma\sigma^2 + \mu \end{align}$$
+    <div style="margin-top: 10px">
+      $$\begin{align} & \text{Voor } z \geq a: z = a \lor z = \mu \\& \text{Voor
+      } z \leq a: z = a \lor z = 2\gamma\sigma^2 + \mu \end{align}$$
     </div>
-  </details>  
-  Hierdoor wordt de iteratie vervangen door een <strong>één-stap</strong> formule. Dit garandeert dat de
-  AI-systeem een stuk sneller wordt en daardoor binnen de tijdslimieten van de robot kan
-  blijven, terwijl hij tegelijkertijd veilig obstakels ontwijkt.
+  </details>
+  Hierdoor wordt de iteratie vervangen door een
+  <strong>één-stap</strong> formule. Dit garandeert dat de AI-systeem een stuk
+  sneller wordt en daardoor binnen de tijdslimieten van de robot kan blijven,
+  terwijl hij tegelijkertijd veilig obstakels ontwijkt.
 </p>

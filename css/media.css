@@ -1,0 +1,22 @@
+/* Zorg dat alle media op het scherm blijft en proportioneel schaalt */
+img, video {
+    max-width: 100%;    /* Past de breedte aan aan de container */
+    height: auto;       /* Behoudt de juiste verhouding (geen vervorming) */
+    display: block;     /* Voorkomt extra witruimte onderaan (inline-block gedrag) */
+    margin: 20px auto;  /* Centreert het element en geeft wat ruimte boven/onder */
+    border-radius: 8px; /* Geeft een iets modernere look aan de hoeken */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Optioneel: voegt een subtiele diepte toe */
+}
+
+/* Voorkom dat de container zelf horizontaal gaat scrollen bij grote elementen */
+.project-layer-content {
+    overflow-x: hidden;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+/* Extra beveiliging voor de video-player */
+video {
+    background-color: #000; /* Zorgt voor een zwart vlak terwijl de video laadt */
+}
