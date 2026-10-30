@@ -18,7 +18,7 @@ const ProjectService = {
         const layerConfig = {
             overzicht: { title: 'Overzicht', hint: 'Niet-technisch' },
             expertise: { title: 'Expertise', hint: 'Engineering Manager' },
-            diepgang: { title: 'Diepgang', hint: '' }
+            diepgang: { title: 'Diepgang', hint: 'Technisch/Wiskunde' }
         };
 
         const layers = Object.keys(layerConfig);

@@ -1,4 +1,7 @@
 **/projects_markdown
 **/Agent_skills
+**/node_modules
 
 opencode.json
+package-lock.json
+package.json
