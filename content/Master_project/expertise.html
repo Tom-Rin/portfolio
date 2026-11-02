@@ -26,33 +26,34 @@
       <ul class="block-list">
         <li class="block-item">
           <span class="block-term">NARX ANN:</span>
-          <span class="block-description"
-            >Ik koos voor deze architectuur omdat deze bijzonder effectief is in
-            het modelleren van niet-lineaire systemen waarbij de huidige staat
-            afhankelijk is van eerdere inputs.</span
+          <span class="block-description">
+            werd gebruikt om de niet-lineaire dynamica te modelleren door de
+            huidige toestand direct te voorspellen gebaseerd op van eedere
+            inputs en staten, wat essentieel is voor systemen waarbij de huidige
+            dynamica volledig afhankelijk is van eerdere gebeurtenissen.</span
           >
         </li>
         <li class="block-item">
           <span class="block-term">SSNN (Recurrent Neural Networks):</span>
           <span class="block-description"
-            >Hierbij maakten we gebruik van <strong>hidden states</strong> om de
-            temporele correlaties in de beweging van de schijf te vatten.</span
+            >maakt gebruik van <strong>hidden states</strong> om de temporele
+            correlaties in de dynamica van de schijf te modelleren.</span
           >
         </li>
         <li class="block-item">
           <span class="block-term">Sparse Gaussian Processes:</span>
-          <span class="block-description"
-            >Gaussian Process wordt gebruikt om ruis in de sensordata te
-            modelleren. Omdat vanilla Gaussian Process te veel geheugen en
-            berekeningen vereist, implementeerde ik een sparse aanpak.</span
+          <span class="block-description">
+            wordt gebruikt om naast de dynamica ook de ruis in de sensordata te
+            modelleren. Omdat "vanille" Gaussian Process te veel geheugen en
+            berekeningen vereist, implementeerde ik een sparse versie.</span
           >
         </li>
         <li class="block-item">
           <span class="block-term">Automatisering met NAS & Optuna:</span>
           <span class="block-description"
-            >Om de meest optimale modelconfiguraties te vinden, heb ik
-            <strong>Neural Architecture Search (NAS)</strong> gebruikt. Door dit
-            te koppelen aan <strong>Optuna</strong>, konden we de zoektocht naar
+            >Om de meest optimale model te vinden, heb ik
+            <strong>Neural Architecture Search (NAS)</strong> gebruikt. Door <strong>Optuna</strong>
+            te gebruiken, konden we de zoektocht naar
             de beste modelstructuur automatiseren. Dit biedt een belangrijke
             winst in betrouwbaarheid: het zorgt ervoor dat we systematisch de
             beste prestaties halen, in plaats van blind te varen op handmatige
@@ -77,7 +78,7 @@
         <li class="block-item">
           <span class="block-term">Reward Engineering:</span>
           <span class="block-description"
-            >Het ontwerpen van aangepaste reward-functies om de swing-up
+            >Het ontwerpen van reward-functies om de swing-up
             beweging te stimuleren, terwijl de stabiliteit aan de top wordt
             gewaarborgd.</span
           >
