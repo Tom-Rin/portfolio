@@ -1,57 +1,110 @@
 <h2>Diepgang</h2>
-<p><strong>Regulering en het voorkomen van Overfitting:</strong></p>
 <p>
-  Een cruciaal onderdeel van dit project was het "temmen" van complexe,
-  niet-lineaire optimalisatieprocessen om fysisch logische resultaten te
-  verkrijgen.
+  <strong
+    >De Reis van Data naar Ontdekking: Hoe we een nieuwe fase
+    valideerden.</strong
+  >
 </p>
+
+<p>
+  Data spreekt niet voor zichzelf; het vereist een methodische interpretatie van
+  de onderliggende fysica. Om een vermoede over een nieuwe kristalstructuur te
+  valideren, hebben we een proces doorlopen van observatie naar wiskundige
+  modellering en uiteindelijke verificatie.
+</p>
+
 <p><strong>De Analyse-flow (Case-study):</strong></p>
-<ul>
-  <li>
-    <strong>Stap 1: De Observatie (Plot 1):</strong> In de DSC-metingen was een
-    subtiele 'shoulder' zichtbaar rond de 126��C. Door de data te visualiseren,
-    werd direct duidelijk dat een standaard model met ǸǸn component deze
-    overgang niet kon verklaren. <br /><br />
-    <img
-      src="../img/Bachelor project/DSC fit base=0.png"
-      alt="DSC fit base=0.png"
-    />
-  </li>
-  <li>
-    <strong>Stap 2: De Wiskundige Uitdaging:</strong> Bij het toevoegen van een
-    tweede component om de nieuwe fase te vatten, liep ik tegen een probleem
-    aan: de complexe niet-lineaire formule bood te veel vrijheidsgraden. Zonder
-    beperkingen leverde het model "wiskundig correcte" oplossingen op die
-    fysisch onmogelijk waren�?"bijvoorbeeld een component die buiten de grenzen
-    van de data viel (Plot 2).
-  </li>
-  <li>
-    <strong>Stap 3: De Oplossing (Regulatie):</strong> Om overfitting te
-    voorkomen, heb ik het aantal variabelen gereduceerd van 15 naar 9 door
-    specifieke fysische parameters te fixeren, zoals de baseline (die door drift
-    gecorrigeerd moest worden) en de warmtecapaciteit (Cp). Door deze 'harde
-    grenzen' op te leggen, dwong ik het optimalisatieproces om binnen de grenzen
-    van de natuurkunde te blijven.
-  </li>
-  <li>
-    <strong>Het Resultaat (Plot 3):</strong> Dit leidde tot een fysisch
-    consistente fit die de aanwezigheid van de nieuwe fase succesvol valideerde.
+
+<ul style="list-style-type: none; padding-left: 0">
+  <li style="margin-bottom: 20px">
+    <strong>Stap 1: De Observatie (Plot 1):</strong>
+    Plot 1 toont de experimentele data
+    (blauw), de theoretische fit (oranje) en de fout (groen). De theoretische fit voor een enkel-stof-model (oranje) vertoont een
+    significante afwijking rond de 126 °C. Deze afwijking is de "rode vlag" die
+    suggereert dat er meer aan de hand is dan een eenvoudige smelttransitie.
     <br /><br />
     <img
       src="../img/Bachelor project/fitted with 1 piek (1).png"
-      alt="fitted with 1 piek (1).png"
+      alt="Plot 1: One-component fit showing deviation"
+    />
+  </li>
+
+  <li style="margin-bottom: 20px">
+    <strong>Stap 2: De Wiskundige Uitdaging (Modelcomplexiteit):</strong> Om een
+    overgang met twee verschillende stoffen te modelleren, maakten we gebruik
+    van een complexe niet-lineaire functie. Deze functie bezit echter 15
+    vrijheidsgraden. Zoals wiskundige John von Neumann ooit schreef:
+    <cite
+      ><em
+        >"With four parameters I can fit an elephant, and with five I can make
+        him wiggle his trunk."</em
+      ></cite
+    >
+    In de statistiek is dit de definitie van overfitting: een model met te veel
+    vrijheidsgraden kan vrijwel elke curve 'perfect' beschrijven, maar verliest
+    daarbij zijn fysische betekenis.
+
+    <details>
+      <summary>Klik hier voor het onderliggende wiskundige model</summary>
+      <div
+        style="
+          margin-top: 10px;
+          padding: 10px;
+          background-color: #f9f9f9;
+          border: 1px solid #ddd;
+        "
+      >
+        $$\begin{align} \text{DSC} &= \nonumber \sum_{i=1,2} \Delta H_i
+        \frac{\alpha_i}{2} \exp
+        ({\frac{\alpha_{i}^{2}}{4\beta}})\exp(\alpha_i(T-T_{m.i}^{0}))
+        \text{erfc}\sqrt{\beta_i}(T-T_{m,i}^{0}
+        +\frac{\alpha_i}{2\beta})\\&+\Delta C_{p,i} + B + C(T-T_r)+ D(T-T_r)^{2}
+        \nonumber \end{align}$$ met $$\begin{align} \Delta C_{p,i} &= \nonumber
+        \frac{1}{2}\exp(\frac{-\alpha_i^{2}}{4\beta_i})(\exp(\frac{-\alpha_i^{2}}{2\beta_i})\exp(\alpha_i(T-T_{m,i}^o))\text{erfc}(\sqrt{\beta_i}(T-T_{m,i}^0+\frac{\alpha_i}{2\beta_i}))\\&+\exp{\frac{\alpha_i^2}{4\beta_i}}(\text{erf}(\sqrt{\beta_i}(T-T_{m,i}^0))+1))\nonumber
+        \end{align}$$ en $$ \text{erf}(x) = \frac{2}{\sqrt{\pi}} \int_0^x
+        \exp(-t^2)dt \\ \text{erfc}(x) =1 − \text{erf}(x)$$ *Parameters:*
+        $\Delta H$ is de enthalpieverandering, $\alpha$ en $\beta$ bepalen de
+        breedte en diepte van de smeltpiek, $T$ is de temperatuur en $T_m$ de
+        evenwichtstemperatuur. $\Delta C_p$ is de warmtecapaciteit verschil van voor en na het smelten en
+        $B, C, D$ bepalen de basislijn.
+      </div>
+    </details>
+    <br />
+    In Plot 2 zie je het gevolg van een model zonder beperkingen: de basislijnen
+    kunnen naar alle kanten wijken om de data uit te leggen, maar het model
+    verliest hiermee zijn fysische betekenis.
+    <br /><br />
+    <img
+      src="../img/Bachelor project/overfitting.png"
+      alt="Plot 2: Example of overfitting with unconstrained baselines"
+    />
+  </li>
+
+  <li style="margin-bottom: 20px">
+    <strong>Stap 3: De Oplossing (Physics-Informed Regularisatie):</strong>
+    Om overfitting te voorkomen en een betrouwbaar resultaat te krijgen, heb ik
+    het aantal parameters gereduceerd van 15 naar 9 door specifieke fysische
+    parameters te fixeren (zoals de basislijn-correctie voor drift en de
+    warmtecapaciteit). Door deze 'harde grenzen' op te leggen, dwongen we het
+    optimalisatieproces om binnen de grenzen van de thermodynamica te blijven.
+  </li>
+
+  <li style="margin-bottom: 20px">
+    <strong>Het Resultaat (De Ontdekking):</strong>
+    Dit leidde tot een fysisch consistente fit die de aanwezigheid van de nieuwe
+    fase succesvol valideerde. Plot 3 laat zien wat de effect is van de modelreductie.
+    De analyse bevestigde dat de stof eerst 2 $H_2O$ moleculen verliest, 
+    gevolgd door een tweede fase overgang waarin 4 $H_2O$ moleculen loskomen van de zout.
+    <br /><br />
+    <img
+      src="../img/Bachelor project/ConstrainedFit.png"
+      alt="Plot 3: Constrained fit validating the new phase"
     />
   </li>
 </ul>
+
 <p>
-  <em
-    >Voor de volledige wiskundige onderbouwing en de specifieke formules die uit
-    de literatuur zijn aangepast, kun je de technische bijlage raadplegen.</em
-  >
-</p>
-<p>
-  <em
-    >Voor de volledige details van de onderzoeksmethoden, inclusief de
-    volledige...</em
-  >
+  Deze data-analyse was de cruciale stap die ons in staat stelde om gerichte
+  röntgendiffractie (X-ray) te uitvoeren, wat uiteindelijk leidde tot de
+  experimentele bevestiging van de nieuwe fase.
 </p>

@@ -1,22 +1,67 @@
-<h2>Diepgang</h2>
-<p><strong>Het Probleem: De Uitdaging van de Parameterruimte</strong></p>
-<p>
-  Bij het trainen van complexe neurale netwerken voor niet-lineaire systemen is
-  de zoekruimte voor de optimale hyperparameters (zoor als het aantal neuronen,
-  verborgen lagen en leerfactoren) groot. Een standaard 'Grid Search' is hierbij
-  vaak ondoenlijk omdat het te veel rekenkracht vereist om elke mogelijke
-  combinatie te proberen, terwijl de meeste combinaties triviaal slecht
-  presteren.
-</p>
-<p><strong>De Oplossing: Bayesian Optimization via Optuna</strong></p>
-<p>
-  Om dit probleem op te lossen, heb ik de "improvement loop" geautomatiseerd
-  door gebruik te maken van <strong>Bayesian Optimization</strong> via het
-  <strong>Optuna</strong> framework. In plaats van een willekeurige zoektocht
-  bouwt Bayesian Optimization een probabilistisch model van de parameterruimte
-  zelf. Dit model "weet" in essentie welke gebieden van de zoekruimte onzeker
-  zijn en welke gebieden waarschijnlijk een piek (optimaal resultaat) bevatten.
-  Door de onzekerheid te minimaliseren en de zoektocht naar een nieuwe piek te
-  balanceren, kan de optimizer veel efficiǮnter zoeken dan bij een Grid Search,
-  omdat het gericht inspeelt op de meest veelbelovende gebieden.
-</p>
+<div class="summary-box">
+  <h2>Hoe een AI "denkt": Bayesian Optimalisatie</h2>
+
+  <p>
+    Stel je voor dat je in een groot bos op zoek bent naar een verborgen schat.
+    Je hebt geen kaart, maar je hebt wel een kompas dat je vertelt hoe dicht je
+    bij de juiste plek bent. Hoe zou je het bos verkennen?
+  </p>
+
+  <p>
+    Je zou kunnen beslissen om willekeurig om je heen te lopen en overal een
+    beetje te graven <strong>(Random Search)</strong>. Dit kost veel tijd en je
+    hebt een kleine kans dat je precies op de juiste plek landt.
+  </p>
+
+  <p>
+    Een slimmere manier is <strong>Bayesian Optimalisatie</strong>. Dit werkt
+    alsof je een mentale kaart <strong>(surrogaatmodel)</strong> van het bos
+    maakt terwijl je loopt. Elke keer dat je een plek onderzoekt, leer je iets
+    over de omgeving: "Hier is niets" of "Hier is iets". Je gebruikt die
+    informatie om een voorspelling te doen over de rest van het bos.
+  </p>
+
+  <!-- GIF Placeholder -->
+  <div style="text-align: center; margin: 20px 0">
+    <img
+      src="../img/master_project/bayesian_opt_v2.gif"
+      alt="Animatie van Bayesian Optimalisatie"
+      style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px"
+    />
+    <p>
+      <em
+        >Animatie van het leerproces: Het model bouwt een 'surrogaatkaart' van
+        de omgeving.</em
+      >
+    </p>
+  </div>
+
+  <h3>Wat zie je in de animatie?</h3>
+<ul style="list-style-type: none; padding-left: 0;">
+  <li style="margin-bottom: 10px;">📐 <strong>3D Model (Links boven):</strong> Dit is de 'kaart' die de AI in zijn hoofd bouwt. Je ziet hoe het model langzaam een vorm aanneemt die lijkt op de werkelijke werkelijkheid. Dit noemen we het <strong>surrogaatmodel</strong>.</li>
+  <li style="margin-bottom: 10px;">🌫️ <strong>Onzekerheid (Links onder):</strong> Dit is de "mist". De AI houdt bij waar hij nog niet genoeg van weet. De blauwe gebieden laten zien waar de AI zich onzeker voelt <strong>(standaarddeviatie)</strong>. Hoe meer hij onderzoekt, hoe meer deze mist wegtrekt.</li>
+  <li style="margin-bottom: 10px;">🧠 <strong>De Beslissing (Rechts boven):</strong> Dit is het 'brein' van het algoritme, de <strong>Acquisition Function</strong>. De AI kijkt naar twee dingen tegelijk: 
+      <ul style="margin-top: 5px; list-style-position: outside; padding-left: 20px;">
+        <li style="color: black;"><em style="color: #e67e22;">Exploitatie:</em> "Ik denk dat dit gebied goed is, ik ga daar kijken."</li>
+        <li style="color: black;"><em style="color: #3498db;">Exploratie:</em> "Ik heb hier nog niets van gezien, ik moet hier gaan kijken om de onzekerheid te verminderen."</li>
+      </ul>
+      De AI kiest de plek waar de kans op een nieuwe verbetering <strong>(Expected Improvement)</strong> het grootst is.</li>
+</ul>
+
+  <h3>Toepassing in mijn project</h3>
+  <p>
+    In dit project heb ik verschillende complexe modellen gebruikt, zoals
+    <strong>NARX ANNs</strong>,
+    <strong>State Space Neural Networks (SSNN)</strong> en
+    <strong>Gaussian Processes (GP)</strong>. Om deze modellen optimaal te laten
+    werken, moest ik honderden verschillende instellingen
+    <strong>(hyperparameters)</strong> testen.
+  </p>
+  <p>
+    Door gebruik te maken van Bayesian Optimalisatie konden we deze zoektocht
+    drastisch versnellen. In plaats van duizenden willekeurige combinaties te
+    testen, "leerde" het algoritme van elke test die het uitvoerde. Hierdoor
+    konden we veel sneller de ideale instellingen vinden voor de modellen, wat
+    cruciaal was voor het succesvol stabiliseren van de systeemdynamica.
+  </p>
+</div>

@@ -1,20 +1,35 @@
 <h2>Expertise</h2>
-<p><strong>Data Analytics & Interpretatie:</strong></p>
 <p>
-  In dit project stond de interpretatie en visualisatie van complexe datasets
-  centraal. Door data van DSC-, TGA- en XRD-metingen te integreren, kon ik een
-  holistisch beeld vormen van het zout gedrag. Een funderend onderdeel hiervan
-  was het opschonen van de data (door het corrigeren van baseline-drift in de
-  DSC-metingen) en het extraheren van bruikbare informatie uit diverse
-  XRD-formaten. Door deze data zorgvuldig te visualiseren, konden subtiele
-  anomalijen worden ontdekt die cruciaal waren voor het identificeren van nieuwe
-  fasen.
+  <strong>Data-analyse als motor voor wetenschappelijke ontdekking:</strong>
 </p>
-<p><strong>Modeladaptatie:</strong></p>
 <p>
-  In plaats van een model vanaf nul te ontwikkelen, heb ik bestaande wiskundige
-  formules uit de literatuur geanalyseerd, begrepen en aangepast aan de
-  specifieke eigenschappen van het onderzochte zout. Deze aanpak zorgde ervoor
-  dat het model niet alleen wiskundig accuraat was, maar ook fysisch consistent
-  bleef met de waarnemingen uit de verschillende karakteriseringstechnieken.
+  Om data-driven beslissingen te maken, is het cruciaal om instrumentele bias te
+  elimineren. In dit project kwam dit op twee manieren voor: de TGA-metingen
+  waren ruizig, terwijl de DSC-metingen structurele afwijkingen vertoonden in de
+  basislijn. Door een geautomatiseerde filter voor ruisonderdrukking en een
+  lineaire basislijncorrectie te ontwikkelen en toe te passen, konden de TGA- en
+  DSC-datasets consistent worden geanalyseerd om een dieper begrip van het zout
+  te verkrijgen. Deze kwaliteitscontrole op de ruwe data was de noodzakelijke
+  voorwaarde voor de daaropvolgende complexe analyse.
+</p>
+<p>
+  Om te verifiëren of er een nieuwe fase aanwezig was, heb ik gebruikgemaakt van
+  niet-lineaire curve fitting. Bij complexe niet-lineaire functies is
+  <strong>overfitting</strong> een groot risico: een model kan perfect
+  aansluiten op de ruwe data, maar daarbij zijn fysische betekenis verliezen. Om
+  de interpreteerbaarheid van de analyse te waarborgen, heb ik het model
+  <strong>geregulariseerd</strong> door het aantal parameters te reduceren van
+  15 naar 9 door deze te fixeren op basis van domeinkennis en natuurkundige
+  wetten. Door deze parameters te fixeren, dwongen we het optimalisatieproces om
+  binnen de grenzen van de fysica te blijven. Deze analyse gaf niet alleen aan
+  dat er een nieuwe fase aanwezig was, maar bood ook een realistisch beeld van
+  de fysische eigenschappen van de stof.
+</p>
+<p>
+  Data-analyse eindigt niet bij het extraheren van resultaten; het dient ook om
+  experimentele opstellingen te valideren. In het vervolgonderzoek heb ik
+  data-analyse gebruikt om de testopstelling voor waterdruk te verifiëren door
+  de metingen te vergelijken met de theoretische Buck-vergelijking. Dit is een
+  krachtige methode omdat de opstelling valideerbaar is over het gehele
+  dampgebied, in plaats van enkel te vertrouwen op statische tabellen.
 </p>
