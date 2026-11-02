@@ -1,11 +1,23 @@
 <h2>Expertise</h2>
-<p>Het doel van dit project was het implementeren van een Active Inference (AIF) agent binnen een Digital Twin omgeving. Om dit mogelijk te maken, was het essentieel om een robuuste data-infrastructuur op te bouwen die verschillende systemen en talen met elkaar verbindt.
-<p> Zie het figuur hieronder voor een overzicht van de geïmpleteerde systeem-architectuur:</p>
+<p>
+  Het doel van dit project was het implementeren van een Active Inference (AIF)
+  agent binnen een Digital Twin omgeving. Om dit mogelijk te maken, was het
+  essentieel om een robuuste data-infrastructuur op te bouwen die verschillende
+  systemen en talen met elkaar verbindt.
+</p>
+<p>
+  Zie het figuur hieronder voor een overzicht van de geïmpleteerde
+  systeem-architectuur:
+</p>
 
-<img src="../img/Master project data engineering/InformationCurrent.png" title ="systeem-architectuur"> 
+<img
+  src="../img/Master project data engineering/InformationCurrent.png"
+  title="systeem-architectuur"
+/>
 
 <p>
-Mijn bijdrage richtte zich op het ontwerpen en bouwen van deze onderliggende infrastructuur, met de volgende pijlers:
+  Mijn bijdrage richtte zich op het ontwerpen en bouwen van deze onderliggende
+  infrastructuur, met de volgende pijlers:
 </p>
 <p><strong>Modulaire Systeem-Orchestratie:</strong></p>
 <p>
@@ -53,11 +65,22 @@ Mijn bijdrage richtte zich op het ontwerpen en bouwen van deze onderliggende inf
 
 <p><strong>Resource-bewuste Performance:</strong></p>
 <p>
-    De gehele infrastructuur draait op een systeem met beperkte rekenkracht (16GB RAM), wat directe gevolgen heeft voor de latency. Dit leidde tot twee belangrijke technische uitdagingen:
+  De gehele infrastructuur draait op een systeem met beperkte rekenkracht (16GB
+  RAM), wat directe gevolgen heeft voor de latency. Dit leidde tot twee
+  belangrijke technische uitdagingen:
 </p>
 <p>
-    1. <strong>Data-stabiliteit:</strong> De verwerkingstijd van Cartographer was inconsistent. Om te garanderen dat het AI-systeem altijd de meest actuele data ontvangt zonder te vertragen, heb ik de data-stroom geoptimaliseerd zodat de AI consistent gevoed wordt.
+  1. <strong>Data-stabiliteit:</strong> De verwerkingstijd van Cartographer was
+  inconsistent. Om te garanderen dat het AI-systeem altijd de meest actuele data
+  ontvangt zonder te vertragen, heb ik de data-stroom geoptimaliseerd zodat de
+  AI consistent gevoed wordt.
 </p>
 <p>
-    2. <strong>Planning-optimalisatie:</strong>  Het AI-systeem plant vooruit om de veiligheid te waarborgen. Dit is specifiek getuned door het aantal vooruit-geplande stappen te optimaliseren. Ik heb het systeem zo ingericht dat het de reeds geplande acties meeneemt tijdens het genereren van een nieuwe planning. Hierdoor kan het systeem direct opnieuw plannen terwijl de oude planning tot N stappen wordt uitgevoerd, waardoor de AI precies op tijd klaar is voor de volgende cyclus binnen de hardware-limieten.
-  </p>
+  2. <strong>Planning-optimalisatie:</strong> Het AI-systeem plant vooruit om de
+  veiligheid te waarborgen. Dit is specifiek getuned door het aantal
+  vooruit-geplande stappen te optimaliseren. Ik heb het systeem zo ingericht dat
+  het de reeds geplande acties meeneemt tijdens het genereren van een nieuwe
+  planning. Hierdoor kan het systeem direct opnieuw plannen terwijl de oude
+  planning tot N stappen wordt uitgevoerd, waardoor de AI precies op tijd klaar
+  is voor de volgende cyclus binnen de hardware-limieten.
+</p>

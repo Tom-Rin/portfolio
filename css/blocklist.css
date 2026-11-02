@@ -1,17 +1,17 @@
-.expertise-list {
+.block-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.expertise-item {
+.block-item {
     margin-bottom: 24px;
     padding-left: 1.5rem;
     position: relative;
 }
 
 /* De subtiele teal markering */
-.expertise-item::before {
+.block-item::before {
     content: "";
     position: absolute;
     left: 0;
@@ -22,14 +22,14 @@
     border-radius: 2px;
 }
 
-.expertise-term {
+.block-term {
     font-family: var(--font-mono);
     font-weight: 700;
     color: var(--color-accent);
     margin-right: 8px;
 }
 
-.expertise-description {
+.block-description {
     color: var(--color-ink);
     opacity: 0.9;
 }

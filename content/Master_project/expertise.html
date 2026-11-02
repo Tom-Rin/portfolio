@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <title>Expertise Master - Ongebalanceerde Schijf</title> -->
+    <!-- <title>expertise Master - Ongebalanceerde Schijf</title> -->
   </head>
   <body>
     <div>
       <!-- <h1>Policy Learning voor Ongebalanceerde Schijf Dynamica</h1> -->
-    
+
       <p>
         Ik heb een machine learning-gebaseerd controlesysteem ontwikkeld om de
         niet-lineaire dynamica van een ongebalanceerde schijf te modelleren en
@@ -16,32 +16,51 @@
         systeemdynamiek en het ontwikkelen van een beleid (policy) om de schijf
         naar de top te bewegen en daar te stabiliseren.
       </p>
-    
+
       <h3>Projectoverzicht</h3>
-    
+
       <p>
         <strong>Leren van Systeemdynamiek (Supervised Learning):</strong><br />
         Het eerste doel was om het niet-lineaire gedrag van de schijf te leren:
       </p>
-      <ul class="expertise-list">
-        <li class="expertise-item">
-          <span class="expertise-term">NARX ANN:</span>
-          <span class="expertise-description">Ik koos voor deze architectuur omdat deze bijzonder effectief is in het modelleren van niet-lineaire systemen waarbij de huidige staat afhankelijk is van eerdere inputs.</span>
+      <ul class="block-list">
+        <li class="block-item">
+          <span class="block-term">NARX ANN:</span>
+          <span class="block-description"
+            >Ik koos voor deze architectuur omdat deze bijzonder effectief is in
+            het modelleren van niet-lineaire systemen waarbij de huidige staat
+            afhankelijk is van eerdere inputs.</span
+          >
         </li>
-        <li class="expertise-item">
-          <span class="expertise-term">SSNN (Recurrent Neural Networks):</span>
-          <span class="expertise-description">Hierbij maakten we gebruik van <strong>hidden states</strong> om de temporele correlaties in de beweging van de schijf te vatten.</span>
+        <li class="block-item">
+          <span class="block-term">SSNN (Recurrent Neural Networks):</span>
+          <span class="block-description"
+            >Hierbij maakten we gebruik van <strong>hidden states</strong> om de
+            temporele correlaties in de beweging van de schijf te vatten.</span
+          >
         </li>
-        <li class="expertise-item">
-          <span class="expertise-term">Sparse Gaussian Processes:</span>
-          <span class="expertise-description">Gaussian Process wordt gebruikt om ruis in de sensordata te modelleren. Omdat vanilla Gaussian Process te veel geheugen en berekeningen vereist, implementeerde ik een sparse aanpak.</span>
+        <li class="block-item">
+          <span class="block-term">Sparse Gaussian Processes:</span>
+          <span class="block-description"
+            >Gaussian Process wordt gebruikt om ruis in de sensordata te
+            modelleren. Omdat vanilla Gaussian Process te veel geheugen en
+            berekeningen vereist, implementeerde ik een sparse aanpak.</span
+          >
         </li>
-        <li class="expertise-item">
-          <span class="expertise-term">Automatisering met NAS & Optuna:</span>
-          <span class="expertise-description">Om de meest optimale modelconfiguraties te vinden, heb ik <strong>Neural Architecture Search (NAS)</strong> gebruikt. Door dit te koppelen aan <strong>Optuna</strong>, konden we de zoektocht naar de beste modelstructuur automatiseren. Dit biedt een belangrijke winst in betrouwbaarheid: het zorgt ervoor dat we systematisch de beste prestaties halen, in plaats van blind te varen op handmatige instellingen.</span>
+        <li class="block-item">
+          <span class="block-term">Automatisering met NAS & Optuna:</span>
+          <span class="block-description"
+            >Om de meest optimale modelconfiguraties te vinden, heb ik
+            <strong>Neural Architecture Search (NAS)</strong> gebruikt. Door dit
+            te koppelen aan <strong>Optuna</strong>, konden we de zoektocht naar
+            de beste modelstructuur automatiseren. Dit biedt een belangrijke
+            winst in betrouwbaarheid: het zorgt ervoor dat we systematisch de
+            beste prestaties halen, in plaats van blind te varen op handmatige
+            instellingen.</span
+          >
         </li>
       </ul>
-    
+
       <p>
         <strong>Policy Learning (Actor-Critic):</strong><br />
         Voor de controle van de continue actieruimte van de schijf heb ik een
@@ -52,39 +71,73 @@
         krijgen; de agent moet leren hoe hij het systeem op de juiste manier
         moet 'opzwepen' voordat hij kan stabiliseren.
       </p>
-    
+
       <p>Om dit te realiseren, heb ik de volgende technieken toegepast:</p>
-      <ul class="expertise-list">
-        <li class="expertise-item">
-          <span class="expertise-term">Reward Engineering:</span>
-          <span class="expertise-description">Het ontwerpen van aangepaste reward-functies om de swing-up beweging te stimuleren, terwijl de stabiliteit aan de top wordt gewaarborgd.</span>
+      <ul class="block-list">
+        <li class="block-item">
+          <span class="block-term">Reward Engineering:</span>
+          <span class="block-description"
+            >Het ontwerpen van aangepaste reward-functies om de swing-up
+            beweging te stimuleren, terwijl de stabiliteit aan de top wordt
+            gewaarborgd.</span
+          >
         </li>
-        <li class="expertise-item">
-          <span class="expertise-term">Trainingsstabiliteit:</span>
-          <span class="expertise-description">Omdat grote reward-waarden kunnen leiden tot instabiele updates in de beleidsnetwerken, heb ik <strong>reward-normalisatie</strong> toegepast. Daarnaast gebruikte ik <strong>entropy regularization</strong> om voldoende exploratie te stimuleren, waardoor de agent niet vastliep in een suboptimale beweging.</span>
+        <li class="block-item">
+          <span class="block-term">Trainingsstabiliteit:</span>
+          <span class="block-description"
+            >Omdat grote reward-waarden kunnen leiden tot instabiele updates in
+            de beleidsnetwerken, heb ik
+            <strong>reward-normalisatie</strong> toegepast. Daarnaast gebruikte
+            ik <strong>entropy regularization</strong> om voldoende exploratie
+            te stimuleren, waardoor de agent niet vastliep in een suboptimale
+            beweging.</span
+          >
         </li>
       </ul>
-    
+
       <h3>Praktische Relevantie & Toepasbaarheid</h3>
-    
+
       <p>
         De methodieken die in dit project zijn ontwikkeld, bieden een stevig
         fundament voor het oplossen van complexe optimalisatieproblemen in een
         industriële context:
       </p>
-    
-      <ul class="expertise-list">
-        <li class="expertise-item">
-          <span class="expertise-term">Behandeling van Tijdreeksdata:</span>
-          <span class="expertise-description">De technieken die ik heb gebruikt voor het modelleren van tijdreeksdata zijn direct overdraagbaar naar diverse domeinen, zoals verkoopdata-analyse of het monitoren van machine-metingen. Het kernpunt hierbij is de juiste behandeling van temporele correlaties: in tegenstelling tot statische data, vereisen deze systemen modellen die begrijpen hoe eerdere datapunten de huidige staat beïnvloeden.</span>
+
+      <ul class="block-list">
+        <li class="block-item">
+          <span class="block-term">Behandeling van Tijdreeksdata:</span>
+          <span class="block-description"
+            >De technieken die ik heb gebruikt voor het modelleren van
+            tijdreeksdata zijn direct overdraagbaar naar diverse domeinen, zoals
+            verkoopdata-analyse of het monitoren van machine-metingen. Het
+            kernpunt hierbij is de juiste behandeling van temporele correlaties:
+            in tegenstelling tot statische data, vereisen deze systemen modellen
+            die begrijpen hoe eerdere datapunten de huidige staat
+            beïnvloeden.</span
+          >
         </li>
-        <li class="expertise-item">
-          <span class="expertise-term">Schaalbaarheid via NAS:</span>
-          <span class="expertise-description">Het gebruik van Neural Architecture Search bood een methodiek om de juiste balans te vinden tussen modelprecisie en hardware-eisen. In een bedrijfscontext is het vaak niet alleen een kwestie van het 'meest nauwkeurige' model vinden, maar een model vinden dat ook voldoet aan de gestelde technische beperkingen (zoals rekenkracht of latentie).</span>
+        <li class="block-item">
+          <span class="block-term">Schaalbaarheid via NAS:</span>
+          <span class="block-description"
+            >Het gebruik van Neural Architecture Search bood systematie methode
+            om de modelprecisie te verbeteren. In een bedrijfscontext is het
+            vaak niet alleen een kwestie van het 'meest nauwkeurige' model
+            vinden, maar een model vinden dat ook voldoet aan de gestelde
+            technische beperkingen (zoals rekenkracht of latentie).</span
+          >
         </li>
-        <li class="expertise-item">
-          <span class="expertise-term">Flexibiliteit van Reinforcement Learning:</span>
-          <span class="expertise-description">Een groot voordeel van RL is de mogelijkheid om complexe problemen op te lossen zelfs als het systeem niet volledig of perfect gedefinieerd is (model-free). Dit maakt het zeer veelzijdig voor scenario's waar de exacte fysica of onderliggende dynamica lastig te modelleren is, maar waar wel een duidelijk einddoel (reward) geformuleerd kan worden.</span>
+        <li class="block-item">
+          <span class="block-term"
+            >Flexibiliteit van Reinforcement Learning:</span
+          >
+          <span class="block-description"
+            >Een groot voordeel van RL is de mogelijkheid om complexe problemen
+            op te lossen zelfs als het systeem niet volledig of perfect
+            gedefinieerd is (model-free). Dit maakt het zeer veelzijdig voor
+            scenario's waar de exacte fysica of onderliggende dynamica lastig te
+            modelleren is, maar waar wel een duidelijk einddoel (reward)
+            geformuleerd kan worden.</span
+          >
         </li>
       </ul>
     </div>

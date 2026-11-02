@@ -43,19 +43,19 @@
 </p>
 <p>In de praktijk werkt dit als volgt:</p>
 <p>
-  1. <strong>Range Detectie:</strong> Het systeem kijkt naar de huidige positie van de robot
-  en bepaalt in welk "circuit" van de cirkel hij zich bevindt (bijvoorbeeld
-  tussen $2\pi$ en $4\pi$).
+  1. <strong>Range Detectie:</strong> Het systeem kijkt naar de huidige positie
+  van de robot en bepaalt in welk "circuit" van de cirkel hij zich bevindt
+  (bijvoorbeeld tussen $2\pi$ en $4\pi$).
 </p>
 <p>
-  2. <strong>Shift-correctie:</strong> De hoek wordt dan naar het centrale bereik van dat
-  circuit getransformeerd.
+  2. <strong>Shift-correctie:</strong> De hoek wordt dan naar het centrale
+  bereik van dat circuit getransformeerd.
 </p>
 <p>
-  3. <strong>Sprong-detectie:</strong> Als de verandering tussen twee metingen groter is dan
-  $\pi$ ($180^\circ$), herkent het systeem dat de robot naar een nieuw circuit
-  is overgestapt (bijvoorbeeld van $359^\circ$ naar $1^\circ$) en corrigeert het
-  de waarde direct naar de juiste lineaire waarde.
+  3. <strong>Sprong-detectie:</strong> Als de verandering tussen twee metingen
+  groter is dan $\pi$ ($180^\circ$), herkent het systeem dat de robot naar een
+  nieuw circuit is overgestapt (bijvoorbeeld van $359^\circ$ naar $1^\circ$) en
+  corrigeert het de waarde direct naar de juiste lineaire waarde.
 </p>
 <p><strong>Resultaat:</strong></p>
 <p>
